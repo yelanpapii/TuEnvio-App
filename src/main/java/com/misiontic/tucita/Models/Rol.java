@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.misiontic.tucita.Models;
 
 import javax.persistence.Entity;
@@ -14,16 +9,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- *Rol del usuario en el sistema
+ * Rol del usuario en el sistema
+ *
  * @author Yelan
  */
-
 @Entity
 @Getter
 @Setter
 @Table(name = "rol")
 public class Rol {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -41,8 +36,5 @@ public class Rol {
 
     public Rol() {
     }
-    
-    
-    
-    
+
 }

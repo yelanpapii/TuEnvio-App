@@ -38,6 +38,14 @@ public class Usuario {
     private String apellidoUsuario;
     private String contraseña;
 
+    //RELACION MUCHOS A MUCHOS PARA LOS ROLES DEL USUARIO
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "usuario_roles",
+            joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "idUsuario"),
+            inverseJoinColumns = @JoinColumn(name = "id_rol", referencedColumnName = "id"))
+    private Collection<Rol> roles;
+
     //RELACION MUCHOS A MUCHOS PARA SABER CUANTOS SOLICITUDES DE SERVICIO TIENE CADA USUARIO
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
@@ -49,22 +57,24 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String email, String apellidoUsuario, String contraseña, Collection<Servicio> servicio) {
+    public Usuario(String nombreUsuario, String email, String apellidoUsuario, String contraseña, Collection<Rol> rol, Collection<Servicio> servicio) {
         super();
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.apellidoUsuario = apellidoUsuario;
         this.contraseña = contraseña;
+        this.roles = rol;
         this.servicios = servicio;
     }
 
-    public Usuario(Integer idUSUARIO, String nombreUsuario, String apellidoUsuario, String email, String pass, Collection<Servicio> servicio) {
+    public Usuario(Integer idUSUARIO, String nombreUsuario, String apellidoUsuario, String email, String pass, Collection<Rol> rol, Collection<Servicio> servicio) {
         super();
         this.idUSUARIO = idUSUARIO;
         this.nombreUsuario = nombreUsuario;
         this.apellidoUsuario = apellidoUsuario;
         this.email = email;
         this.contraseña = pass;
+        this.roles = rol;
         this.servicios = servicio;
     }
 

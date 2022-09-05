@@ -49,7 +49,7 @@ public class LoginService {
 
         ApiResponse response = new ApiResponse();
 
-        Usuario usuario = repo.findByEmail(user.getEmail());
+        Usuario usuario = repo.findOneByEmailAndContraseña(user.getEmail(),user.getContraseña());
 
         if (usuario == null) {
 

@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- *Proximo controlador para inicio de sesion
+ *Controlador inicio de sesion. endpoints: " www.example.com/" (Registro), "www.example.com/login" (login)
  * @author Yelan
  */
 @Controller
-@RequestMapping("/api")
 public class LoginController {
     
     @Autowired

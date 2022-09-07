@@ -13,7 +13,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Entidad: Formato de solicitud del usuario que sera almacenada en la base de
+ * Entidad: Formato de envio del usuario que sera almacenada en la base de
  * datos
  *
  * @author Yelan
@@ -26,7 +26,7 @@ public class Servicio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(name = "nombre_servicio")
     private String nombreServicio;
     @Column(name = "duracion")
@@ -41,7 +41,7 @@ public class Servicio {
     public Servicio() {
     }
 
-    public Servicio(Integer id, String nombreServicio, Date duracion, Date fechaDeCreacion,String EstadoSolicitud, double costoServicio) {
+    public Servicio(Long id, String nombreServicio, Date duracion, Date fechaDeCreacion,String EstadoSolicitud, double costoServicio) {
         super();
         this.id = id;
         this.nombreServicio = nombreServicio;

@@ -29,7 +29,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUSUARIO;
+    private Long id;
     @Column(name = "nombre_usuario")
     private String nombreUsuario;
     @Column(name = "email")
@@ -42,40 +42,32 @@ public class Usuario {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "usuario_roles",
-            joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "idUsuario"),
+            joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "id_rol", referencedColumnName = "id"))
     private Collection<Rol> roles;
-
-    //RELACION MUCHOS A MUCHOS PARA SABER CUANTOS SOLICITUDES DE SERVICIO TIENE CADA USUARIO
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "usuario_servicio",
-            joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "idUsuario"),
-            inverseJoinColumns = @JoinColumn(name = "id_servicio", referencedColumnName = "id"))
-    private Collection<Servicio> servicios;
 
     public Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String email, String apellidoUsuario, String contraseña, Collection<Rol> rol, Collection<Servicio> servicio) {
+    public Usuario(String nombreUsuario, String email, String apellidoUsuario, String contraseña, Collection<Rol> rol) {
         super();
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.apellidoUsuario = apellidoUsuario;
         this.contraseña = contraseña;
         this.roles = rol;
-        this.servicios = servicio;
+
     }
 
-    public Usuario(Integer idUSUARIO, String nombreUsuario, String apellidoUsuario, String email, String pass, Collection<Rol> rol, Collection<Servicio> servicio) {
+    public Usuario(Long idUSUARIO, String nombreUsuario, String apellidoUsuario, String email, String pass, Collection<Rol> rol) {
         super();
-        this.idUSUARIO = idUSUARIO;
+        this.id = idUSUARIO;
         this.nombreUsuario = nombreUsuario;
         this.apellidoUsuario = apellidoUsuario;
         this.email = email;
         this.contraseña = pass;
         this.roles = rol;
-        this.servicios = servicio;
+      
     }
 
 }

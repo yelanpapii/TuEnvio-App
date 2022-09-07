@@ -32,7 +32,7 @@ public class LoginService {
             return response;
         }
 
-        if (nuevo.getIdUSUARIO() == 1) {
+        if (nuevo.getId() == 1) {
             nuevo.setRoles(Arrays.asList(new Rol("ROLE_ADMIN")));
         } else {
             nuevo.setRoles(Arrays.asList(new Rol("ROLE_USER")));

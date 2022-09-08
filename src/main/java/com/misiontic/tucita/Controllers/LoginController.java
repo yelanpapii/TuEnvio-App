@@ -21,7 +21,7 @@ public class LoginController {
     @Autowired
     LoginService login;
     
-    @PostMapping("/")
+    @PostMapping("/register")
     public ResponseEntity<ApiResponse> singUp(@RequestBody RegisterRequestDto regist){
         ApiResponse response = login.registAccount(regist);
         

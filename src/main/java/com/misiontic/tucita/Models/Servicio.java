@@ -1,5 +1,6 @@
 package com.misiontic.tucita.Models;
 
+import com.misiontic.tucita.Common.EnvioEstado;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import lombok.Setter;
  * Entidad: Formato de envio del usuario que sera almacenada en la base de
  * datos
  *
+ * (NECESITA ACTUALIZACION)
  * @author Yelan
  */
 @Entity
@@ -34,7 +36,7 @@ public class Servicio {
     private Date duracion;
     private Date fechaDeCreacion;
     //Activa, En Proceso, Cancelada, Hecho
-    private String estadoSolicitud;
+    private String estadoSolicitud = EnvioEstado.ENVIO_ESTADO.ACTIVA;
     @Column(name = "costo_servicio")
     private double costoServicio;
 

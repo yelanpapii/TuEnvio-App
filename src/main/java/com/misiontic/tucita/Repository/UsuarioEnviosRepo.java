@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *Repositorio de cada envio por usuario.
- * @author Yefferson
+ * @author Yelan
  */
 @Repository
 public interface UsuarioEnviosRepo extends CrudRepository<UsuarioEnvio, Long> {

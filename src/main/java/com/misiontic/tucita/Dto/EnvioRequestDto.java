@@ -18,10 +18,10 @@ public class EnvioRequestDto {
     private String telefono;
     private String nombreEnvio;
     private String direccionEnvio;
-    private float largo;
-    private float ancho;
-    private float altura;
-    private float peso;
+    private double largo;
+    private double ancho;
+    private double altura;
+    private double peso;
     private String nombreDestinatario;
     private String apellidoDestinatario;
     private String emailDestinatario;

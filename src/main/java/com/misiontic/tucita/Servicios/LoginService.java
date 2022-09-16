@@ -32,17 +32,18 @@ public class LoginService {
             return response;
         }
 
-        if (nuevo.getId() == 1) {
+        /*if (nuevo.getId() == 1) {
             nuevo.setRoles(Arrays.asList(new Rol("ROLE_ADMIN")));
         } else {
             nuevo.setRoles(Arrays.asList(new Rol("ROLE_USER")));
-        }
+        }*/
         //Crea nuevo modelo del usuario
 
         nuevo.setNombreUsuario(user.getNombreUsuario());
         nuevo.setApellidoUsuario(user.getApellidoUsuario());
         nuevo.setEmail(user.getEmail());
         nuevo.setContraseña(user.getContraseña());
+        nuevo.setRoles(Arrays.asList(new Rol("ROLE_USER")));
 
         //Guarda usuario en la base de datos
         repo.save(nuevo);

@@ -1,6 +1,8 @@
 package com.misiontic.tucita.Models;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import lombok.Getter;
@@ -45,7 +48,11 @@ public class Usuario {
             joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "id_rol", referencedColumnName = "id"))
     private Collection<Rol> roles;
-
+    
+   /* @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    private List<Servicio> servicios = new ArrayList<Servicio>();
+*/
     public Usuario() {
     }
 
@@ -67,7 +74,7 @@ public class Usuario {
         this.email = email;
         this.contraseña = pass;
         this.roles = rol;
-      
-    }
 
+    }
+ 
 }

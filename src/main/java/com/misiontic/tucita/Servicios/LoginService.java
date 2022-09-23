@@ -54,7 +54,7 @@ public class LoginService {
     }
 
     public ApiResponse loginAccount(LoginRequestDto user) {
-
+        
         ApiResponse response = new ApiResponse();
 
         Usuario usuario = repo.findOneByEmailAndContraseña(user.getEmail(), user.getContraseña());
@@ -65,7 +65,7 @@ public class LoginService {
 
             return response;
         }
-
+        
         response.setData("Usuario Logeado");
 
         return response;

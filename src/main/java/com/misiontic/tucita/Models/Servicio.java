@@ -55,9 +55,9 @@ public class Servicio {
     //Activa, En Proceso, Cancelada, Hecho
     private String estadoSolicitud = EnvioEstado.ENVIO_ESTADO.ACTIVA;
     //Id de usuario destinatario
-    @JsonIgnoreProperties({"contraseña", "nombreUsuario", "id", "apellidoUsuario", "roles"})
+    @JsonIgnoreProperties({"contraseña", "nombreUsuario", "apellidoUsuario", "roles"})
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     private Usuario usuarioDestinatario;
 
     public Servicio() {
@@ -78,5 +78,22 @@ public class Servicio {
         this.peso = peso;
         this.usuarioDestinatario = usuario_id;
     }
+
+    public Servicio(String nombreSender, String apellidosSender, String emailSender, String telefonoSender, String nombreServicio, Date fechaDeCreacion, String direccionEnvio, double largo, double ancho, double altura, double peso) {
+        super();
+        this.nombreSender = nombreSender;
+        this.apellidosSender = apellidosSender;
+        this.emailSender = emailSender;
+        this.telefonoSender = telefonoSender;
+        this.nombreServicio = nombreServicio;
+        this.fechaDeCreacion = fechaDeCreacion;
+        this.direccionEnvio = direccionEnvio;
+        this.largo = largo;
+        this.ancho = ancho;
+        this.altura = altura;
+        this.peso = peso;
+    }
+    
+    
 
 }

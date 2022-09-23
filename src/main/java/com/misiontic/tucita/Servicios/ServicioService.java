@@ -21,9 +21,10 @@ import org.springframework.stereotype.Service;
 public class ServicioService {
 
     Calendar cale = Calendar.getInstance();
+    
     @Autowired
     ServicioRepository repoEnvio;
-
+    
     @Autowired
     UsuarioRepository repoUser;
 
@@ -75,5 +76,14 @@ public class ServicioService {
         return nuevoEnvio;
 
     }
-
+    
+    public Servicio actualizarServicio(Servicio envio){
+        
+        return repoEnvio.save(envio);
+    }
+    
+    public void eliminarServicio(Long id){
+        
+        repoEnvio.deleteById(id);
+    }
 }

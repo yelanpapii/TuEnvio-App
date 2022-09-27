@@ -31,6 +31,7 @@ public class Rol {
     }
 
     public Rol(String name) {
+        super();
         this.name = name;
     }
 

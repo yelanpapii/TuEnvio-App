@@ -13,7 +13,7 @@ import lombok.Setter;
 
 /**
  *Tabla para saber cuantos envios tiene cada usuario.
- * @author Yefferson
+ * @author Yelan
  */
 @Entity
 @Getter

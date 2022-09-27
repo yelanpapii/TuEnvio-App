@@ -18,7 +18,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -44,7 +43,7 @@ public class Servicio {
     private String telefonoSender;
     @Column(name = "nombre_servicio")
     private String nombreServicio;
-    @Column(name = "duracion")
+    @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     private Date fechaDeCreacion;
     private String direccionEnvio;

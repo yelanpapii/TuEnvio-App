@@ -7,6 +7,7 @@ import com.misiontic.tucita.Models.Usuario;
 import com.misiontic.tucita.Repository.ServicioRepository;
 import com.misiontic.tucita.Repository.UsuarioRepository;
 import com.misiontic.tucita.Validator.EnvioValidator;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,10 @@ import org.springframework.stereotype.Service;
 public class ServicioService {
 
     Calendar cale = Calendar.getInstance();
-    
+
     @Autowired
     ServicioRepository repoEnvio;
-    
+
     @Autowired
     UsuarioRepository repoUser;
 
@@ -34,7 +35,6 @@ public class ServicioService {
     public Iterable<Servicio> mostrarServicios() {
 
         return repoEnvio.findAll();
-
     }
 
     public Servicio mostrarServicioById(Long id) {
@@ -44,12 +44,12 @@ public class ServicioService {
     }
 
     public Servicio crearServicio(EnvioRequestDto envio) {
-
+        
         List<Error> errors = validator.createEnvioValidator(envio);
 
         //validacion de errores en el envio
         if (errors.size() > 0) {
-            throw new Error("Usuario destinatario no existe");
+            throw new Error(errors.iterator().toString());
         }
 
         //Trae al usuario destinatario mediante su email
@@ -76,14 +76,14 @@ public class ServicioService {
         return nuevoEnvio;
 
     }
-    
-    public Servicio actualizarServicio(Servicio envio){
-        
+
+    public Servicio actualizarServicio(Servicio envio) {
+
         return repoEnvio.save(envio);
     }
-    
-    public void eliminarServicio(Long id){
-        
+
+    public void eliminarServicio(Long id) {
+
         repoEnvio.deleteById(id);
     }
 }

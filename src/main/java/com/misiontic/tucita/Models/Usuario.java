@@ -1,5 +1,6 @@
 package com.misiontic.tucita.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -39,6 +40,7 @@ public class Usuario {
     private String email;
     @Column(name = "apellido_usuario")
     private String apellidoUsuario;
+    @JsonIgnore
     private String contraseña;
 
     //RELACION MUCHOS A MUCHOS PARA LOS ROLES DEL USUARIO

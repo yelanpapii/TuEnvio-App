@@ -6,8 +6,6 @@
 
 package com.misiontic.tucita.Dto;
 
-import com.misiontic.tucita.Models.Rol;
-import java.util.Collection;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,11 +17,9 @@ import lombok.Setter;
 @Setter
 public class UsuarioDto {
     
-    private Long id;
     private String nombreUsuario;
     private String email;
     private String apellidoUsuario;
     private String contraseña;
-    private Collection<Rol> roles;
     
 }

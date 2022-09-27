@@ -13,8 +13,8 @@ import lombok.Setter;
 public class RegisterRequestDto {
 
     private String nombreUsuario;
-    private String email;
     private String apellidoUsuario;
+    private String email;
     private String contraseña;
     
 }

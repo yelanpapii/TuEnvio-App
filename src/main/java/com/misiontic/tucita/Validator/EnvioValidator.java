@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Checkeo de errores al crear un envio.
- * (Retornar errores en un response) 
-  (No se sabe si se utilizara)
+ * TODO: Añadir mas posibles errores al crear un envio
  * @author Yelan
  */
 @Component

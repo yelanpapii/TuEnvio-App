@@ -1,6 +1,8 @@
 # TucitaApp Rest API
 Repositorio para el desarrollo del proyecto Mintic del grupo 1
 
+author: Yeffran Gonzalez (Grupo 52 Utp)
+
 ENDPOINTS:
 
         Users:
@@ -47,7 +49,6 @@ JSON POST:
                 emailDestinatario
                 telefonoDestinatario
         TRAMITES:
-                id
                 name
                 description
         USERS:

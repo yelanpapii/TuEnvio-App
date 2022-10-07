@@ -1,7 +1,9 @@
 # TucitaApp Rest API
-Repositorio para el desarrollo del proyecto Mintic del grupo 1
+Aplicacion de envios y administracion de paquetes hecha para el desarrollo del proyecto Mintic del grupo 1
 
+Link APP: https://dainty-macaron-fa7187.netlify.app/
 author: Yeffran Gonzalez (Grupo 52 Utp)
+
 
 ENDPOINTS:
 

@@ -1,11 +1,11 @@
-# TucitaApp Rest API
+# TuEnvioApp APP
 Aplicacion de envios y administracion de paquetes hecha para el desarrollo del proyecto Mintic del grupo 1
 
 Link APP: https://dainty-macaron-fa7187.netlify.app/
 
 
 
-ENDPOINTS:
+ENDPOINTS DE REST API:
 
         Users:
                 GET /users

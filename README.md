@@ -1,11 +1,8 @@
 # TuEnvioApp APP
-Aplicacion de envios y administracion de paquetes hecha para el desarrollo del proyecto Mintic del grupo 1
-
-Link APP: https://dainty-macaron-fa7187.netlify.app/
+A Springboot Sample Rest Api For Shipping and Ship Management.
 
 
-
-ENDPOINTS DE REST API:
+ENDPOINTS:
 
         Users:
                 GET /users
